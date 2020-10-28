@@ -5,7 +5,6 @@ import wiringpi as wp
 wp.wiringPiSetup()
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)# Устанавливаем режим нумерации пинов
-GPIO.setup(19, GPIO.OUT) # Устанавливаем режим пина в OUTPUT
 dht11.DHT11 = GPIO.BCM(19, 50) #pin24 in cap
 #read data using pin 14
 instance = dht11.DHT11
