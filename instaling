@@ -1,0 +1,12 @@
+Установка офиса
+sudo apt install libreoffice
+Установка библиотеки wiringpi для Python
+pip3 install wiringpi
+Установка библиотеки TroykaCapPython
+pip3 install git+https://github.com/amperka/TroykaCapPython
+Установка dht11
+pip3 install dht11
+Установка numpy
+pip3 install numpy
+Установка pandas
+sudo apt-get install python3-pandas
