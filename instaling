@@ -12,3 +12,6 @@ pip3 install numpy
 sudo apt-get install python3-pandas
 Установка git 
 sudo apt install git-all
+файл Excel из Python
+pip3 install XlsxWriter
+(URL: https://tirinox.ru/write-excel-python/)
