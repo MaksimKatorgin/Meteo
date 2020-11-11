@@ -15,3 +15,5 @@ sudo apt install git-all
 файл Excel из Python
 pip3 install XlsxWriter
 (URL: https://tirinox.ru/write-excel-python/)
+Установка sqlite3
+sudo apt-get install sqlite3
