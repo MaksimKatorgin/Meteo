@@ -10,7 +10,6 @@ from datetime import datetime, date
 conn = sqlite3.connect('/home/pi/Meteo/meteo.db')
 cursor = conn.cursor()
 cursor.execute("""CREATE TABLE if not exists data_meteo (date text, time1 text, light text, temp text, hum text, pressure text)""")
-#conn.commit()
 
 bus = smbus.SMBus(1)
 exp = gpioexp.gpioexp()
