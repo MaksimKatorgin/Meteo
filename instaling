@@ -18,3 +18,5 @@ pip3 install XlsxWriter
 pip3 install openpyxl
 Установка sqlite3
 sudo apt-get install sqlite3
+mongo
+python3 -m pip install pymongo==3.5.1
