@@ -20,3 +20,5 @@ pip3 install openpyxl
 sudo apt-get install sqlite3
 mongo
 python3 -m pip install pymongo==3.5.1
+web-server
+python3 -m http.server 5000 
