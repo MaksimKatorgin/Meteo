@@ -66,7 +66,7 @@ while (True):
             print("Влажность:", hum, "% - норма")
         if hum>60:
             print("Влажность:", hum, "% - выше нормы")
-        if pressure<747:
+        if pressure<760:
             print("Атмосферное давение:", pressure, "mm Hg - ниже нормы")
         if 760<=pressure<=760:
             print("Атмосферное давение:", pressure, "mm Hg - норма")
