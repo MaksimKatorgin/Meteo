@@ -47,7 +47,7 @@ while (True):
     print("Дата:", date)
     print("Время:", time1)
     if int(month)==3 and int(day)>=21 or int(month)>3 and int(month)<9 or int(month)==9 and int(day)<=22:
-        #летнние нормы с 21 марта по 22 сентября
+        #летние нормы с 21 марта по 22 сентября
         if light<300:
             print("Освещённость:", light, "lx - ниже нормы")
         if 300<=light<=600:
@@ -73,7 +73,7 @@ while (True):
         if pressure>760:
             print("Атмосферное давение:", pressure, "mm Hg - выше нормы")
         print(" ")
-        #летнние нормы с 21 марта по 22 сентября
+        #летние нормы с 21 марта по 22 сентября
     else:
         #зимние нормы с 23 сентября по 20 марта
         if light<300:
