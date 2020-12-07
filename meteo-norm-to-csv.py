@@ -106,7 +106,7 @@ while (True):
     f.write(str(date))
     f.write(str(" Время: "))
     f.write(str(time1))
-    f.write(str(" Освещеность: "))
+    f.write(str(" Освещёность: "))
     f.write(str(light))
     f.write(str(" Температура: "))
     f.write(str(temp))
