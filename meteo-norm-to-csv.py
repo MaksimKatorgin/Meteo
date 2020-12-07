@@ -67,11 +67,11 @@ while (True):
         if hum>60:
             print("Влажность:", hum, "% - выше нормы")
         if pressure<760:
-            print("Атмосферное давение:", pressure, "mm Hg - ниже нормы")
+            print("Атмосферное давление:", pressure, "mm Hg - ниже нормы")
         if 760<=pressure<=760:
-            print("Атмосферное давение:", pressure, "mm Hg - норма")
+            print("Атмосферное давление:", pressure, "mm Hg - норма")
         if pressure>760:
-            print("Атмосферное давение:", pressure, "mm Hg - выше нормы")
+            print("Атмосферное давление:", pressure, "mm Hg - выше нормы")
         print(" ")
         #летние нормы с 21 марта по 22 сентября
     else:
@@ -95,11 +95,11 @@ while (True):
         if hum>45:
             print("Влажность:", hum, "% - выше нормы")
         if pressure<747:
-            print("Атмосферное давение:", pressure, "mm Hg - ниже нормы")
+            print("Атмосферное давление:", pressure, "mm Hg - ниже нормы")
         if 747<=pressure<=749:
-            print("Атмосферное давение:", pressure, "mm Hg - норма")
+            print("Атмосферное давление:", pressure, "mm Hg - норма")
         if pressure>749:
-            print("Атмосферное давение:", pressure, "mm Hg - выше нормы")
+            print("Атмосферное давление:", pressure, "mm Hg - выше нормы")
         print(" ")
         #зимние нормы с 23 сентября по 20 марта
     f.write(str(" Дата: "))
