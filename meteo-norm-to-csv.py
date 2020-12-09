@@ -5,12 +5,12 @@ import smbus
 import RPi.GPIO as GPIO
 import dht11
 from math import *
-from datetime import datetime, date
+from datetime import datetime, date #Подключение библиотек
 
-bus = smbus.SMBus(1)
-exp = gpioexp.gpioexp()
+bus = smbus.SMBus(1) #Инициализация библиотеки для обмена данными по шине I²C
+exp = gpioexp.gpioexp() #Инициализация библиотеки для работы с расширителем портов Raspberry
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) #Инициализация библиотеки GPIO
 
 def light_read(pin):
     RES_DIVIDER = 10000
@@ -27,11 +27,10 @@ def light_read(pin):
     sensorRatio = ADC_VALUE_MAX / (sensorADC - 1)
     sensorResistance = RES_DIVIDER / sensorRatio
     _sensorLight = int((MULT_VALUE / pow(sensorResistance, POW_VALUE)) / 230)
-    return(_sensorLight)
+    return(_sensorLight) #Функция для работы датчика освещенности
 
-while (True):
-    time.sleep(0.5)
-    f = open ('/home/pi/Meteo/meteo.csv', 'a')
+while (True): #Цикл, исполняемый раз в секунду
+    f = open ('/home/pi/Meteo/meteo.csv', 'a') #Открываем CSV-табицу, если ее нет то создаем
     bus.write_byte_data(0x5C, 0x20, 0x90)
     data = bus.read_i2c_block_data(0x5C, 0x28 | 0x80, 3)
     date = datetime.now().strftime("%d.%m.%Y")
@@ -113,6 +112,6 @@ while (True):
     f.write(str(" Влажность: "))
     f.write(str(hum))
     f.write(str(" Атмосферное давление: "))
-    f.write(str(pressure) + '\n')
-    f.close()
-    time.sleep(0.5)
+    f.write(str(pressure) + '\n') #Записать значения в таблицу, перейти на следующую строку
+    f.close() #Закрыть таблицу
+    time.sleep(1) #Ждем 1 секунду
