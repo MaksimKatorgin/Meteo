@@ -30,7 +30,7 @@ def light_read(pin):
     return(_sensorLight) #Функция для работы датчика освещенности
 
 while (True): #Цикл, исполняемый раз в секунду
-    f = open ('/home/pi/Meteo/meteo.csv', 'a') #Открываем CSV-табицу, если ее нет то создаем
+    f = open ('/home/pi/Meteo/meteo.csv', 'a') #Открываем CSV-табицу, если ее нет, то создаем
     bus.write_byte_data(0x5C, 0x20, 0x90)
     data = bus.read_i2c_block_data(0x5C, 0x28 | 0x80, 3)
     date = datetime.now().strftime("%d.%m.%Y")
