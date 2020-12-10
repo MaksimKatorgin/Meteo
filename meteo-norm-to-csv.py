@@ -45,7 +45,7 @@ while (True): #Цикл, исполняемый раз в секунду
     hum = result.humidity
     pressure = round((data[2] * 65536 + data[1] * 256 + data[0])*0.750064 / 4096.0, 1) #1 гектопаскаль = 0.750064 миллиметра ртутного столба
     day = int(datetime.now().strftime("%d"))
-    month = int(datetime.now().strftime("%m"))
+    month = int(datetime.now().strftime("%m")) #вытаскиваем из даты день и месяц
     print("Дата:", date)
     print("Время:", time1)
     if int(month)==3 and int(day)>=21 or int(month)>3 and int(month)<9 or int(month)==9 and int(day)<=22:
