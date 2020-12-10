@@ -38,11 +38,11 @@ while (True): #Цикл, исполняемый раз в секунду
     data = bus.read_i2c_block_data(0x5C, 0x28 | 0x80, 3)
     date = datetime.now().strftime("%d.%m.%Y")
     time1 = datetime.now().strftime("%H:%M:%S")
-    light = light_read(0)-29 #Пин A0 на Troyka Cap
+    light = light_read(0)-29 #Пин A0 на Troyka Cap, освещенность
     instance = dht11.DHT11(pin = 15) #Пин TX на Troyka Cap
     result = instance.read()
-    temp = result.temperature
-    hum = result.humidity
+    temp = result.temperature #Температура
+    hum = result.humidity #Влажность
     pressure = round((data[2] * 65536 + data[1] * 256 + data[0])*0.750064 / 4096.0, 1) #1 гектопаскаль = 0.750064 миллиметра ртутного столба
     day = int(datetime.now().strftime("%d"))
     month = int(datetime.now().strftime("%m")) #Вытаскиваем из даты день и месяц
