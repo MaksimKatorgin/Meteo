@@ -38,8 +38,8 @@ while (True): #Цикл, исполняемый раз в секунду
     data = bus.read_i2c_block_data(0x5C, 0x28 | 0x80, 3)
     date = datetime.now().strftime("%d.%m.%Y")
     time1 = datetime.now().strftime("%H:%M:%S")
-    light = light_read(0)-29
-    instance = dht11.DHT11(pin = 15)
+    light = light_read(0)-29 #Пин A0 на Troyka Cap
+    instance = dht11.DHT11(pin = 15) #Пин TX на Troyka Cap
     result = instance.read()
     temp = result.temperature
     hum = result.humidity
