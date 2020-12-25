@@ -1,5 +1,5 @@
 #Данная программа определяет дату и время, считывает показания с датчиков, определяет нормы в соответствии с сезоном и заносит их в электронную таблицу
-#Согласно ГОСТ 30494-2011 освещенность в офисе должна быть 300-600 lx.  Для теплого времени года температура должна быть 23-25 °С,
+#Согласно ГОСТ 30494-2011 освещённость в офисе должна быть 300-600 lx.  Для теплого времени года температура должна быть 23-25 °С,
 #влажность 30-60 %, атмосферное давление 760 мм. рт. ст.  Для холодного времени года:  температура - 22-24 °С, влажность 30-45 %, атмосферное давление 747-749 мм. рт. ст. 
 import csv
 import gpioexp
@@ -30,7 +30,7 @@ def light_read(pin):
     sensorRatio = ADC_VALUE_MAX / (sensorADC - 1)
     sensorResistance = RES_DIVIDER / sensorRatio
     _sensorLight = int((MULT_VALUE / pow(sensorResistance, POW_VALUE)) / 230)
-    return(_sensorLight) #Функция для работы датчика освещенности
+    return(_sensorLight) #Функция для работы датчика освещённости
 
 while (True): #Цикл, исполняемый раз в секунду
     f = open ('/home/pi/Meteo/meteo.csv', 'a') #Открываем CSV-табицу, если ее нет, то создаем
@@ -38,7 +38,7 @@ while (True): #Цикл, исполняемый раз в секунду
     data = bus.read_i2c_block_data(0x5C, 0x28 | 0x80, 3)
     date = datetime.now().strftime("%d.%m.%Y")
     time1 = datetime.now().strftime("%H:%M:%S")
-    light = light_read(0)-29 #Пин A0 на Troyka Cap, освещенность
+    light = light_read(0)-29 #Пин A0 на Troyka Cap, освещённость
     instance = dht11.DHT11(pin = 15) #Пин TX на Troyka Cap
     result = instance.read()
     temp = result.temperature #Температура
